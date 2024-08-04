@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     javascriptLink.addEventListener("click", function(event) {
         event.preventDefault();
-        loadContent("../data/javascript-README.html", "javascript-content");
+        loadContent("../AnswerDeck/data/javascript-README.html", "javascript-content");
     });
 
     pythonLink.addEventListener("click", function(event) {
         event.preventDefault();
-        loadContent("../data/python-README.html", "python-content");
+        loadContent(".AnswerDeck/data/python-README.html", "python-content");
     });
 
     function loadHomeContent() {
