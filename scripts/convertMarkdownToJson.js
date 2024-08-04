@@ -11,7 +11,7 @@ const languages = ['javascript', 'python']; // Add other languages as needed
 
 languages.forEach(lang => {
   const questionsDir = join(__dirname, `../languages/${lang}/questions`);
-  const outputFile = join(__dirname, `../data/${lang}-data.json`);
+  const outputFile = join(__dirname, `../data/${lang}-questions.json`);
 
   const files = readdirSync(questionsDir).filter(file => file.endsWith('.md'));
   const data = files.map(file => {

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search-input");
     const searchButton = document.getElementById("search-button");
     const resultsContainer = document.getElementById("results-container");
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Load data when the page is loaded
     loadSearchData();
 
-    searchButton.addEventListener("click", function() {
+    searchButton.addEventListener("click", () => {
         const query = searchInput.value.toLowerCase().trim();
         console.log("Search query:", query);  // Debugging
         fetchResults(query);
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function fetchResults(query) {
         if (!searchData.length) {
-            resultsContainer.innerHTML = "<p>No results found</p>";
+            resultsContainer.innerHTML = "<p>No data available</p>";
             console.log("No search data available.");  // Debugging
             return;
         }
@@ -42,30 +42,32 @@ document.addEventListener("DOMContentLoaded", function() {
             results.forEach(result => {
                 const resultElement = document.createElement("div");
                 resultElement.classList.add("result-item");
-                resultElement.innerHTML = `<h3>${result.title}</h3>${result.content}`;
+                resultElement.innerHTML = `
+                    <h3>${result.title}</h3>
+                    <div class="result-content">${result.content}</div>
+                `;
                 resultsContainer.appendChild(resultElement);
             });
         }
     }
 
-    function loadSearchData() {
-        // Load data for JavaScript and Python questions
-        Promise.all([
-            fetch("../data/javascript-questions.json").then(response => response.json()),
-            fetch("../data/python-questions.json").then(response => response.json())
-        ])
-        .then(([javascriptData, pythonData]) => {
+    async function loadSearchData() {
+        try {
+            const [javascriptData, pythonData] = await Promise.all([
+                fetch("../data/javascript-questions.json").then(response => response.json()),
+                fetch("../data/python-questions.json").then(response => response.json())
+            ]);
+            
             // Combine and index the data
-            searchData = javascriptData.concat(pythonData).map(item => {
-                return {
-                    title: item.fileName,
-                    content: item.content
-                };
-            });
+            searchData = [...javascriptData, ...pythonData].map(item => ({
+                title: item.fileName,
+                content: item.content
+            }));
             console.log("Search data loaded:", searchData);  // Debugging
-        })
-        .catch(error => {
+
+        } catch (error) {
             console.error("Error loading search data:", error);
-        });
+            resultsContainer.innerHTML = "<p>Error loading data</p>";
+        }
     }
 });

@@ -1,0 +1,135 @@
+/* Dark GitHub README Style */
+
+.python-content h2, .python-content h3 {
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.python-content h2 {
+  color: #58a6ff;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 0.3em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.python-content h3 {
+  color: #79c0ff;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.python-content p {
+  color: #c9d1d9;
+  margin-bottom: 1em;
+  font-family: Arial, sans-serif;
+}
+
+.python-content a {
+  color: #58a6ff;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.python-content a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #58a6ff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.python-content a:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.python-content img[alt*="Question"], 
+.python-content img[alt*="Hint"], 
+.python-content img[alt*="Output"], 
+.python-content img[alt*="Solution"] {
+  border: 2px solid #58a6ff;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.python-content img:hover {
+  transform: scale(1.05); /* Subtle scale effect */
+}
+
+.python-content p img {
+  display: inline; /* Ensure images in paragraphs align properly */
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.python-content h3 + p {
+  display: flex;
+  align-items: center; /* Center align text with image */
+  margin-bottom: 1em;
+}
+
+.python-content hr {
+  border: 0;
+  border-top: 1px solid #30363d;
+  margin: 2em 0;
+}
+
+.python-content code {
+  background-color: #2d333b;
+  color: #d69d85;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.python-content pre {
+  background-color: #2d333b;
+  color: #d69d85;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.python-content blockquote {
+  border-left: 4px solid #58a6ff;
+  padding-left: 1em;
+  color: #8b949e;
+  margin: 1.5em 0;
+}
+
+.python-content ul, 
+.python-content ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.python-content ul li, 
+.python-content ol li {
+  margin-bottom: 0.5em;
+}
+
+.center {
+  gap: 5px;
+  display: flex;
+  justify-content: center; /* Center aligned */
+  align-items: center;
+  flex-direction: row;
+}
+
+.left-align {
+  text-align: left;
+  width: 100%;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
