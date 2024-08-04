@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Website</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Search Website</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for questions...">
+            <button id="search-button">Search</button>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" id="home-link">Home</a></li>
+                    <li><a href="#" id="javascript-link">JavaScript</a></li>
+                    <li><a href="#" id="python-link">Python</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <div id="content-placeholder">
+                <h2>Welcome to the Search Website</h2>
+                <p>This is the main content area where you can display information.</p>
+                <div id="results-container"></div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Search Website. All rights reserved.</p>
+    </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/loadContent.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

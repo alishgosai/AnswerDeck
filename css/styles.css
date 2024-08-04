@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.search-container {
+    margin-top: 1em;
+}
+
+#search-input {
+    width: 80%;
+    padding: 0.5em;
+    font-size: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+#results-container {
+    margin-top: 1em;
+}
+
+.result-item {
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
+
+.result-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.result-item p {
+    margin: 0.5em 0 0;
+}
+
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 1em;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 1em 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.content {
+    flex: 1;
+    padding: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
