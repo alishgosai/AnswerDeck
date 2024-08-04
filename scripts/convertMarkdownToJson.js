@@ -1,24 +1,37 @@
-// Example: convertMarkdownToJson.js
-const fs = require('fs');
-const path = require('path');
-const marked = require('marked');
+import { readdirSync, readFileSync, writeFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { join, dirname } from 'path';
+import { marked } from 'marked';
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const languages = ['javascript', 'python']; // Add other languages as needed
 
 languages.forEach(lang => {
-  const questionsDir = path.join(__dirname, `../languages/${lang}/questions`);
-  const outputFile = path.join(__dirname, `../data/${lang}-data.json`);
+  const questionsDir = join(__dirname, `../languages/${lang}/questions`);
+  const outputFile = join(__dirname, `../data/${lang}-data.json`);
 
-  const files = fs.readdirSync(questionsDir).filter(file => file.endsWith('.md'));
+  const files = readdirSync(questionsDir).filter(file => file.endsWith('.md'));
   const data = files.map(file => {
-    const filePath = path.join(questionsDir, file);
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const filePath = join(questionsDir, file);
+    const fileContent = readFileSync(filePath, 'utf-8');
+
+    // Extract the question number from the file name, e.g., "Question1.md" -> 1
+    const questionNumber = file.match(/Question(\d+)/)[1];
+
     return {
+      language: lang,
+      questionNumber: parseInt(questionNumber, 10),
       fileName: file,
-      content: marked(fileContent) // Convert Markdown to HTML
+      content: marked.parse(fileContent) // Convert Markdown to HTML
     };
   });
 
-  fs.writeFileSync(outputFile, JSON.stringify(data, null, 2));
+  // Sort by question number to ensure order
+  data.sort((a, b) => a.questionNumber - b.questionNumber);
+
+  writeFileSync(outputFile, JSON.stringify(data, null, 2));
   console.log(`Created data file for ${lang}: ${outputFile}`);
 });

@@ -1,10 +1,10 @@
-const fs = require("fs");
-const path = require("path");
-const readline = require("readline");
+import fs from 'fs';
+import path from 'path';
+import readline from 'readline';
 
-const questionsDir = "questions";
-const solutionsDir = "solutions";
-const readmeFile = "README.md"; // Changed from All-Questions.md to README.md
+const questionsDir = 'questions';
+const solutionsDir = 'solutions';
+const readmeFile = 'README.md'; // Changed from All-Questions.md to README.md
 
 // Ensure directories exist
 if (!fs.existsSync(questionsDir)) fs.mkdirSync(questionsDir);
@@ -19,16 +19,16 @@ const rl = readline.createInterface({
 // Function to prompt user for input and generate files
 function promptUserAndGenerateFiles() {
   rl.question(
-    "How many additional question files do you want to create? ",
+    'How many additional question files do you want to create? ',
     (numQuestions) => {
       rl.question(
-        "How many additional solution files do you want to create? ",
+        'How many additional solution files do you want to create? ',
         (numSolutions) => {
           const numQ = parseInt(numQuestions, 10);
           const numS = parseInt(numSolutions, 10);
 
           if (isNaN(numQ) || isNaN(numS)) {
-            console.error("Invalid input. Please enter valid numbers.");
+            console.error('Invalid input. Please enter valid numbers.');
             rl.close();
             return;
           }
@@ -37,15 +37,15 @@ function promptUserAndGenerateFiles() {
           handleFileGeneration(
             numQ,
             questionsDir,
-            "Question",
-            ".md",
+            'Question',
+            '.md',
             generateQuestionContent
           );
           handleFileGeneration(
             numS,
             solutionsDir,
-            "Solution",
-            ".js",
+            'Solution',
+            '.js',
             generateSolutionContent
           );
 
@@ -61,23 +61,22 @@ function promptUserAndGenerateFiles() {
 
 // Function to handle file generation
 function handleFileGeneration(num, dir, type, ext, contentGenerator) {
-  let existingFiles = fs
+  const existingFiles = fs
     .readdirSync(dir)
-    .filter((file) => file.startsWith(type));
-  let existingIndexes = existingFiles
-    .map((file) => getFileIndex(file, type, ext))
+    .filter(file => file.startsWith(type));
+  const existingIndexes = existingFiles
+    .map(file => getFileIndex(file, type, ext))
     .sort((a, b) => a - b);
-  let maxExistingIndex =
-    existingIndexes.length > 0 ? Math.max(...existingIndexes) : 0;
+  const maxExistingIndex = existingIndexes.length > 0 ? Math.max(...existingIndexes) : 0;
 
   // Create files for missing indexes
   for (let index = 1; index <= maxExistingIndex; index++) {
-    let filePath = path.join(dir, `${type}${index}${ext}`);
+    const filePath = path.join(dir, `${type}${index}${ext}`);
     if (
       !fs.existsSync(filePath) ||
-      fs.readFileSync(filePath, "utf8").trim() === ""
+      fs.readFileSync(filePath, 'utf8').trim() === ''
     ) {
-      let content = contentGenerator(index);
+      const content = contentGenerator(index);
       fs.writeFileSync(filePath, content);
       console.log(`Created or updated ${type} file: ${filePath}`);
     }
@@ -85,12 +84,12 @@ function handleFileGeneration(num, dir, type, ext, contentGenerator) {
 
   // Create new files beyond the existing ones
   for (let i = maxExistingIndex + 1; i <= maxExistingIndex + num; i++) {
-    let filePath = path.join(dir, `${type}${i}${ext}`);
+    const filePath = path.join(dir, `${type}${i}${ext}`);
     if (
       !fs.existsSync(filePath) ||
-      fs.readFileSync(filePath, "utf8").trim() === ""
+      fs.readFileSync(filePath, 'utf8').trim() === ''
     ) {
-      let content = contentGenerator(i);
+      const content = contentGenerator(i);
       fs.writeFileSync(filePath, content);
       console.log(`Created ${type} file: ${filePath}`);
     }
@@ -99,14 +98,14 @@ function handleFileGeneration(num, dir, type, ext, contentGenerator) {
 
 // Function to extract the index from a filename
 function getFileIndex(filename, type, ext) {
-  let match = filename.match(new RegExp(`${type}(\\d+)${ext}`));
+  const match = filename.match(new RegExp(`${type}(\\d+)${ext}`));
   return match ? parseInt(match[1], 10) : 1;
 }
 
 // Function to generate content for question files
 function generateQuestionContent(index) {
   const repoLink =
-    "https://github.com/alishgosai/Javascript-Exercise-and-Solutions";
+    'https://github.com/alishgosai/Javascript-Exercise-and-Solutions';
 
   return `
 
@@ -149,19 +148,19 @@ function generateSolutionContent(index) {
 
 // Function to update README.md
 function updateReadmeFile() {
-  let questionsFiles = fs
+  const questionsFiles = fs
     .readdirSync(questionsDir)
-    .filter((file) => file.endsWith(".md"))
+    .filter(file => file.endsWith('.md'))
     .sort((a, b) => {
       return parseInt(a.match(/\d+/)[0], 10) - parseInt(b.match(/\d+/)[0], 10);
     });
 
-  let content = questionsFiles
-    .map((file) => {
-      let fileContent = fs.readFileSync(path.join(questionsDir, file), "utf8");
+  const content = questionsFiles
+    .map(file => {
+      const fileContent = fs.readFileSync(path.join(questionsDir, file), 'utf8');
       return fileContent;
     })
-    .join("\n");
+    .join('\n');
 
   fs.writeFileSync(readmeFile, content);
   console.log(`Updated ${readmeFile}`);

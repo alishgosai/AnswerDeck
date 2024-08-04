@@ -9,10 +9,6 @@
 <body>
     <header>
         <h1>Search Website</h1>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search for questions...">
-            <button id="search-button">Search</button>
-        </div>
     </header>
     <div class="container">
         <aside class="sidebar">
@@ -30,7 +26,11 @@
             <div id="content-placeholder">
                 <h2>Welcome to the Search Website</h2>
                 <p>This is the main content area where you can display information.</p>
-                <div id="results-container"></div>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search for questions...">
+                    <button id="search-button">Search</button>
+                    <div id="results-container"></div>
+                </div>
             </div>
         </main>
     </div>
@@ -42,3 +42,5 @@
     <script src="../js/search.js"></script>
 </body>
 </html>
+
+
