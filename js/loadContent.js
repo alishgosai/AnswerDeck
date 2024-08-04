@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     pythonLink.addEventListener("click", function(event) {
         event.preventDefault();
-        loadContent(".AnswerDeck/data/python-README.html", "python-content");
+        loadContent("../AnswerDeck/data/python-README.html", "python-content");
     });
 
     function loadHomeContent() {

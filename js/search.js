@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     async function loadSearchData() {
         try {
             const [javascriptData, pythonData] = await Promise.all([
-                fetch("../data/javascript-questions.json").then(response => response.json()),
-                fetch("../data/python-questions.json").then(response => response.json())
+                fetch("../AnswerDeck/data/javascript-questions.json").then(response => response.json()),
+                fetch("../AnswerDeck/data/python-questions.json").then(response => response.json())
             ]);
             
             // Combine and index the data
