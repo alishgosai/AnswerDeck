@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://alishgosai.github.io; img-src 'self'; connect-src 'self';">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://alishgosai.github.io; img-src 'self'; connect-src 'self';"> -->
     <title>AnswerDeck</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/javascript-content.css">
     <link rel="stylesheet" href="./css/python-content.css">
 </head>
+
 <body>
     <header>
         <div class="logo-container">
             <img src="images/logo.jpeg" alt="">
             <h1>AnswerDeck</h1>
         </div>
-        
+
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Search for questions...">
             <button id="search-button">Search</button>
         </div>
     </header>
+
     <div class="main-container">
         <aside class="sidebar">
             <nav>
@@ -42,23 +45,27 @@
                     <li><a href="">more</a></li>
                     <li><a href="">more</a></li>
                     <li><a href="">more</a></li>
-                    
                 </ul>
             </nav>
         </aside>
-        <main class="content">
-            <div id="content-placeholder">
-                <h2>Welcome to the Search Website</h2>
-                <p>This is the main content area where you can display information.</p>
-                <div id="results-container"></div>
-            </div>
-        </main>
+
+        <div class="main-content">
+            <main class="content">
+                <div id="content-placeholder">
+                    <h2>Welcome to the Search Website</h2>
+                    <p>This is the main content area where you can display information.</p>
+                    <div id="results-container"></div>
+                </div>
+            </main>
+            <footer>
+                <p>&copy; 2024 Search Website. All rights reserved.</p>
+            </footer>
+        </div>
     </div>
-    <footer>
-        <p>&copy; 2024 Search Website. All rights reserved.</p>
-    </footer>
+
     <script src="./js/script.js"></script>
     <script src="./js/loadContent.js"></script>
     <script src="./js/search.js"></script>
 </body>
+
 </html>

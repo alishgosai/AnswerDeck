@@ -1,17 +1,11 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* 
 body {
   font-family: Arial, sans-serif;
   background-color: #0d1117;
   color: #c9d1d9;
   line-height: 1.6;
   font-size: 16px;
-  padding: 2rem;
+
 }
 
 a {
@@ -42,7 +36,7 @@ h3 {
   color: #79c0ff;
 }
 
-/* Enhanced Content Styles */
+
 p {
   margin-bottom: 1em;
   color: #c9d1d9;
@@ -130,4 +124,4 @@ img[alt*="Question"], img[alt*="Hint"], img[alt*="Output"], img[alt*="Solution"]
 img[alt*="Question"]:hover, img[alt*="Hint"]:hover, img[alt*="Output"]:hover, img[alt*="Solution"]:hover {
   transform: scale(1.05);
   border-color: #79c0ff;
-}
+} */
