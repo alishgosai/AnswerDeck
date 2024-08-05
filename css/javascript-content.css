@@ -40,6 +40,7 @@
   bottom: 0;
   width: 0;
   height: 2px;
+  margin-bottom: -.5em;
   background-color: #58a6ff;
   transition: width 0.3s ease, left 0.3s ease;
 }
@@ -54,7 +55,6 @@
 .javascript-content img[alt*="Output"], 
 .javascript-content img[alt*="Solution"] {
   border-radius: 4px;
-  margin-bottom: 1em;
   vertical-align: middle;
   transition: transform 0.3s ease;
 }
@@ -70,8 +70,6 @@
 }
 
 .javascript-content h3 + p {
-  display: flex;
-  align-items: center;
   margin-bottom: 1em;
 }
 
@@ -83,7 +81,7 @@
 
 .javascript-content code {
   background-color: #2d333b;
-  color: #d69d85;
+  color: #c9d1d9;
   padding: 0.2em 0.4em;
   border-radius: 6px;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;

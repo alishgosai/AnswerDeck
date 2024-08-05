@@ -2,81 +2,94 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://alishgosai.github.io; img-src 'self'; connect-src 'self';"> -->
-    <title>AnswerDeck</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/javascript-content.css">
-    <link rel="stylesheet" href="../css/python-content.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://alishgosai.github.io; img-src 'self'; connect-src 'self';"> -->
+  <title>AnswerDeck</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css"
+    integrity="sha512-EJp8vMVhYl7tBFE2rgNGb//drnr1+6XKMvTyamMS34YwOEFohhWkGq13tPWnK0FbjSS6D8YoA3n3bZmb3KiUYA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/javascript-content.css">
+  <link rel="stylesheet" href="../css/python-content.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="../images/logo.jpeg" alt="">
-            <h1>AnswerDeck</h1>
-        </div>
-
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search for questions...">
-            <button id="search-button">Search</button>
-        </div>
-    </header>
-
-    <div class="main-container">
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li><a href="#" id="home-link">Home</a></li>
-                    <li><a href="#" id="javascript-link">JavaScript</a></li>
-                    <li><a href="#" id="python-link">Python</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="">more</a></li>
-                    <li><a href="">more</a></li>
-                    <li><a href="">more</a></li>
-                    <li><a href="">more</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <div class="main-content">
-            <main class="content">
-                <div id="content-placeholder">
-                    <ul class="languages-nav">
-                        <li><a href="./index.html">All Categories</a></li>
-                        <li><a href="./javascript.html">JavaScript</a></li>
-                        <li><a href="./python.html">Python</a></li>
-                        <li><a href="#">React</a></li>
-                    </ul>
-
-                    <h2>JavaScript AnswerDeck</h2>
-                    <div id="results-container"></div>
-                    <div id="javascript-content-placeholder" class="javascript-content">
-                        <!-- Content from javascript-README.html will be loaded here -->
-                    </div>
-                </div>
-            </main>
-            <footer>
-                <p>&copy; 2024 Search Website. All rights reserved.</p>
-            </footer>
-        </div>
-
-        <aside class="left-sidebar">
-            <nav>
-                <ul>
-                    <li><a href="#" id="home-link">Home</a></li>
-                    <li><a href="#" id="javascript-link">JavaScript</a></li>
-                    <li><a href="#" id="python-link">Python</a></li>
-                </ul>
-            </nav>
-        </aside>
+  <header>
+    <div class="logo-container">
+      <img src="../images/logo.jpeg" alt="">
+      <h1>AnswerDeck</h1>
     </div>
 
-    <script src="../js/loadContents.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/search.js"></script>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search for questions...">
+      <button id="search-button">Search</button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="../html/index.html" id="home-link"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li><a href="../html/contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+          <li><a href="../html/about.html"><i class="fas fa-info-circle"></i> About</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <nav class="language-filter-nav">
+        <ul class="languages-nav">
+          <li><a href="../html/index.html">All Categories</a></li>
+          <li><a href="../html/javascript.html" class="active">JavaScript</a></li>
+          <li><a href="../html/python.html">Python</a></li>
+          <li><a href="../html/react.html">React</a></li>
+          <li><a href="../html/java.html">Java</a></li>
+        </ul>
+        <div class="filter-sort">
+          <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-filter"></i> Filter</button>
+            <div class="dropdown-content filter-by">
+              <a href="#" id="filter1">JavaScript</a>
+              <a href="#" id="filter2">Python</a>
+              <a href="#" id="filter1">React</a>
+              <a href="#" id="filter2">Java</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-sort"></i> Sort By</button>
+            <div class="dropdown-content sort-by">
+              <a href="#" id="sort1">New</a>
+              <a href="#" id="sort2">Old</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main class="content">
+        <div id="content-placeholder">
+          <h2>JavaScript AnswerDeck</h2>
+          <div id="results-container"></div>
+          <div id="javascript-content-placeholder" class="javascript-content">
+            <!-- Content from javascript-README.html will be loaded here -->
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 Search Website. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="../js/loadContents.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/search.js"></script>
 </body>
 
 </html>

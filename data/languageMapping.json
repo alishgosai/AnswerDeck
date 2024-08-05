@@ -1,4 +1,6 @@
 {
   "javascript": "languages/javascript",
-  "python": "languages/python"
+  "python": "languages/python",
+  "react": "languages/react",
+  "java": "languages/java"
 }
