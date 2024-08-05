@@ -8,10 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
     loadSearchData();
 
     searchButton.addEventListener("click", () => {
+        performSearch();
+    });
+
+    searchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            performSearch();
+        }
+    });
+
+    function performSearch() {
         const query = searchInput.value.toLowerCase().trim();
         console.log("Search query:", query);  // Debugging
         fetchResults(query);
-    });
+    }
 
     function fetchResults(query) {
         if (!searchData.length) {
