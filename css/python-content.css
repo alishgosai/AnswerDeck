@@ -6,7 +6,7 @@
 }
 
 .python-content h2 {
-  color: #58a6ff;
+  color: #e4eaf1;
   border-bottom: 1px solid #30363d;
   padding-bottom: 0.3em;
   margin-top: 1em;
@@ -53,7 +53,6 @@
 .python-content img[alt*="Hint"], 
 .python-content img[alt*="Output"], 
 .python-content img[alt*="Solution"] {
-  border: 2px solid #58a6ff;
   border-radius: 4px;
   margin-bottom: 1em;
   vertical-align: middle;
@@ -61,18 +60,18 @@
 }
 
 .python-content img:hover {
-  transform: scale(1.05); /* Subtle scale effect */
+  transform: scale(1.1);
 }
 
 .python-content p img {
-  display: inline; /* Ensure images in paragraphs align properly */
+  display: inline;
   vertical-align: middle;
   margin-right: 0.5em;
 }
 
 .python-content h3 + p {
   display: flex;
-  align-items: center; /* Center align text with image */
+  align-items: center;
   margin-bottom: 1em;
 }
 
