@@ -11,6 +11,7 @@ body {
   color: #c9d1d9;
   line-height: 1.6;
   font-size: 16px;
+  margin: 0;
 }
 
 /* pre needed */
@@ -135,8 +136,9 @@ header h1 {
 /* Content Area Styles */
 .main-content {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
-  width: 65%;
+  min-width: 65%;
   background-color: #1f1f1f;
   margin: 0 auto;
 }
